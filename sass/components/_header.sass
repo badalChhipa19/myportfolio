@@ -1,0 +1,130 @@
+.header
+  width: 100vw
+  height: 55vw
+  background-blend-mode: hard-light
+  background-image: linear-gradient(to right top, $color-primary-1 , $color-primary-4), url("../img/my_img2.jpg")
+  background-size: cover
+  background-position: right
+  // NAVIGATIONS---------
+  &__nav
+    display: flex
+    align-items: center
+    cursor: pointer
+    padding: 1.5rem 1.5rem
+    z-index: 9
+
+    &:hover .header__logo_box::before, &:hover .header__logo_box::after
+      width: 100%
+      height: 100%
+      transform: rotate(45deg)
+
+    &:hover .header__lists
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 4% 50%)
+      background-image: linear-gradient(to right, $color-primary-3 0%, $color-primary-3 80%, rgba($color-primary-3, .5 ) 85%, rgba($color-primary-3, .2 ) 90%, transparent)
+      opacity: 1
+      visibility: visible
+      margin-left: -2.3rem
+      flex-grow: 0
+
+
+    &:hover  .header__link
+      color: $color-grey-light-1
+
+  // LOGO BOX-----
+  &__logo_box
+    height: 4vw
+    width: 4vw
+    display: inline-block
+    position: relative
+    flex-shrink: 0
+
+    &::before,
+    &::after
+      content: ""
+      height: 50%
+      width: 50%
+      position: absolute
+      transition: all .2s, transform .2s .2s
+
+    &::before
+      top: 0
+      left: 0
+      border-left: 2px solid $color-primary-3
+      border-top: 2px solid $color-primary-3
+    &::after
+      right: 0
+      bottom: 0
+      border-right: 2px solid $color-primary-3
+      border-bottom: 2px solid $color-primary-3
+
+
+  &__logo
+    width: 100%
+    height: 100%
+    padding: 1rem
+    
+  // LINKS----------
+  &__lists
+    list-style: none
+    display: flex
+    gap: 3rem
+    padding: 1.5rem 7rem
+    padding-right: 10rem
+    position: relative
+    flex-grow: 1
+    margin-left: 50% 
+    opacity: 0
+    visibility: hidden
+    transition: all .2s ease-in-out .4s
+    
+
+  &__link
+    &:link,
+    &:visited
+      font-family: $font-secondary
+      text-transform: uppercase
+      text-decoration: none
+      color: transparent
+      font-size: 2rem
+      transition: all .4s 
+
+  // HEADER CONTENT-------------
+  &__text_container
+    height: 100%
+    display: flex
+    align-items: center
+    position: relative
+
+  &__content
+    text-transform: uppercase
+    display: flex
+    flex-direction: column
+    padding-left: 20%
+    font-weight: 900
+    // background-color: #333
+    
+    h1
+      font-size: 8rem
+
+
+  &__greet
+    font-size: 3rem
+    margin-bottom: 3rem
+    font-weight: 400
+
+  &__sepcel
+    // color: transparent
+    font-size: 3rem
+    margin-top: 1rem
+
+  &__about
+    display: inline-block
+    list-style: none
+    margin: 5% 0 0 20%
+    padding: 2%
+    color: $color-primary-4
+    font-weight: bold
+    width: max-content
+    backdrop-filter: grayscale(1) 
+    box-shadow: 0 0 8rem $color-grey-dark-2    
+

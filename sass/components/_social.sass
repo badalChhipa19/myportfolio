@@ -1,0 +1,93 @@
+.social
+  width: 100vw
+  height: 30vh
+
+  // LEft side
+  &__left
+    display: flex
+    flex-direction: column
+    align-items: center
+    position: fixed
+    left: 4%
+    bottom: 0%
+    z-index: 1
+
+
+  &__style
+    list-style: none
+    display: flex
+    flex-direction: column
+    gap: 2rem
+
+  &__icon
+    height: 4rem
+    width: 4rem
+    fill: $color-grey-light-1
+    transition: all .5s
+
+    &:hover
+      transform: translateY(-.8rem) scale(1.08)
+      fill: $color-primary-1
+      background-color: $color-grey-light-1
+      border-radius: .8rem
+
+  // Right Side
+  &__right    
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 12rem
+    position: fixed
+    right: -1%
+    bottom: 0%
+    z-index: 1
+
+  &__gmail
+    &:link,
+    &:visited
+      padding: .5rem
+      font-size: 2rem
+      font-family: $font-secondary
+      line-height: 1
+      text-decoration: none
+      color: inherit
+      display: inline-block
+      transform: rotate(270deg) 
+      transition: all .5s
+
+      &:hover
+        color: $color-primary-1
+        transform: rotate(270deg) translateX(.8rem)
+        background-color: $color-grey-light-1
+        border-radius: .8rem
+
+.line__left,
+.line__right
+  width: 1px
+  height: 10rem
+  background-color: $color-grey-light-1
+
+.line__right
+  height: 10rem
+  
+.up__arr
+  &:link,
+  &:visited
+    font-size: 3rem
+    display: flex
+    flex-direction: column
+    position: fixed
+    bottom: 0%
+    right: 5.7%
+    transform: translateX(50%)
+    cursor: pointer
+    z-index: -1
+    color: $color-grey-light-3
+
+  &:hover
+    animation: go-to-top .5s
+    color: $color-grey-light-2
+
+  ion-icon:not(:first-child)
+    margin-top: -1rem
+

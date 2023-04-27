@@ -1,0 +1,69 @@
+.skills
+  padding: 10% 13%
+  display: flex
+  flex-direction: column
+
+  &__tech
+    display: flex
+    justify-content: space-between
+
+    &_frontend, &_backend, &_database 
+      position: relative
+      background-image: linear-gradient(to bottom left, $color-primary-1, $color-primary-2)
+      height: 50rem
+      width: 40rem
+      display: flex
+      flex-direction: column
+      overflow: hidden
+
+
+    &_img
+      width: 40rem
+      height: 40%
+      clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%)
+      background-blend-mode: color
+      background-position: top
+      background-size: cover
+
+      &--1
+        background-image: linear-gradient(to bottom left, $color-secondary-1, $color-secondary-2, $color-secondary-3, $color-secondary-4) ,url('../img/frontend.jpeg')
+      &--2
+        background-image: linear-gradient(to bottom left, $color-secondary-1, $color-secondary-2, $color-secondary-3, $color-secondary-4) ,url('../img/backend.png')
+      &--3
+        background-image: linear-gradient(to bottom left, $color-secondary-1, $color-secondary-2, $color-secondary-3, $color-secondary-4) ,url('../img/database.jpg')
+
+    &_heading
+      font-size: 3rem
+      font-weight: 700
+      text-transform: uppercase
+      display: inline-block
+      padding: .5rem 2rem
+      background-image: linear-gradient(to right bottom,$color-secondary-3, $color-secondary-4)
+      transform: skew(-15deg)
+      position: absolute
+      top: 25%
+      right: 2rem
+    
+    &_list
+      list-style: none
+      font-size: 4rem
+      font-weight: 900
+      letter-spacing: 2px
+      text-align: center
+      color: $color-secondary-3
+      font-family: $font-tertiary
+
+      li:not(:last-child)
+        border-bottom: 2px solid $color-grey-dark-2
+
+#section__skill
+  padding: 0
+  position: relative
+  overflow: hidden
+
+.bg-video__content
+  background-size: cover
+  background-position: center
+  position: absolute
+  z-index: -1
+  opacity: 40%

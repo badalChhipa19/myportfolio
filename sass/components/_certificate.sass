@@ -1,0 +1,93 @@
+.certificate
+  &__container
+    display: grid
+    grid-template-columns: 1fr 2fr
+  
+  &__img_box
+    height: 42vw
+    display: flex
+    gap: 20%
+    flex-wrap: nowrap
+    border: 2rem solid $color-primary-3
+    background-image: url('../img/carousel-bg.jpg')
+    background-size: cover
+    background-repeat: no-repeat
+    overflow: hidden
+    
+
+  &__img
+    width: 100%
+  
+.certificate
+  padding: 4rem
+  display: flex
+  flex-direction: column
+  gap: 4rem
+  position: relative
+
+  &::after
+    content: ''
+    display: block
+    width: .4rem
+    background-color: $color-grey-dark-2
+    position: absolute
+    top: 5%
+    bottom: 5%
+    margin-left: 2.5rem
+    transform: translateX(-50%)
+    z-index: -1
+
+  &::before
+    content: 'Show more'
+    display: inline-block
+    font-size: 1.6rem
+    font-weight: 500
+    padding: .4rem
+    position: absolute
+    background-color: $color-primary-1
+    bottom: 0%
+    margin-left: 2.5rem
+    transform: translateX(-50%) rotate(270deg)
+    width: max-content
+    border: .4rem solid $color-grey-dark-2
+    border-radius: 50px
+    cursor: pointer
+
+
+  &__detail
+    display: flex
+    gap: 2rem
+
+  &__logo
+    font-size: 3rem
+    font-weight: 100
+    padding: 1rem
+    background-color: $color-grey-light-1
+    color: $color-primary-3
+    border-radius: 50%
+    outline: .4rem solid $color-grey-dark-2
+
+  &__content
+    background-color: $color-primary-3
+    border-radius: 2px
+    color: $color-grey-light-1
+    padding: 2rem
+    width: 80%
+    cursor: pointer
+    position: relative
+
+    &::after
+      content: ''
+      display: block
+      border-style: solid
+      border-width: 1rem 1rem 1rem 0
+      border-color: transparent $color-primary-3 transparent 
+      position: absolute
+      top: 10%
+      left: -2.5%
+      z-index: -1
+
+  &__text
+    font-size: 2rem
+    font-weight: 500
+    pointer-events: none

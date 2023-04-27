@@ -1,0 +1,130 @@
+#section__contact
+  background-color: $color-primary-3
+
+
+.contact
+  display: flex
+  justify-content: space-between
+
+  // Contact  ontainer
+  &__container
+    width: 50%
+
+  &__form
+    display: flex
+    flex-direction: column
+    gap: 1rem
+
+  
+  &__field
+    width: 80%
+    position: relative
+
+    label
+      color: $color-grey-dark-1
+
+
+  &__input_box
+    width: 100%
+    font-size: 2.4rem
+    padding: .8rem 1.6rem
+    background-color: $color-primary-3
+    border: none
+    border-bottom: 2px solid $color-grey-dark-1
+    color: $color-grey-dark-1
+    transition: border .3s
+
+    &::placeholder
+      font-family: $font-secondary
+      font-size: 1.6rem
+
+    &:focus
+      outline: none
+
+    &:invalid
+      border-bottom: 2px solid $color-grey-light-1
+    
+
+  &__textarea
+    max-width: 100%
+    max-height: 22rem 
+    resize: none
+    
+    &::-webkit-scrollbar
+      display: none
+    &::scrollbar
+      display: none
+
+  &__submit
+    width: max-content 
+    font-size: 2rem
+    padding: .8rem 1.6rem
+    border: none
+    background-color: $color-grey-dark-1
+    color: $color-primary-3
+    cursor: pointer
+
+    &:hover
+      box-shadow: 2px 2px 4px $color-grey-dark-2
+      transform: translateY(-3px)
+
+    &:active
+      box-shadow: 2px 2px 2px $color-grey-dark-2
+      transform: translateY(0)
+
+// Contact list
+.footer
+  &__lists
+    list-style: none
+    display: flex
+    flex-direction: column
+    padding-left: 2rem
+
+  &__link
+    overflow: hidden
+    position: relative
+    line-height: 1
+    padding: .8rem 0
+    &:link,
+    &:visited
+      text-transform: uppercase
+      letter-spacing: 1px
+      font-weight: 700
+      text-decoration: none
+      color: $color-grey-light-1  
+      display: inline-block
+
+    &:hover
+      color: $color-grey-light-3
+    
+    &::after
+      content: ''
+      display: inline-block
+      width: 100%
+      height: 2px
+      background-color: $color-grey-light-3
+      position: absolute
+      bottom: 0
+      left: 0
+      transform: translateX(-100%)
+      transition: all .3s
+
+    &:hover::after
+      transform: translate(0)
+      // animation: bottomLine .8s ease-in-out
+
+
+
+// VALIDATION
+
+[name = 'checkmark-done-outline']
+  color: $color-secondary-5
+  position: absolute
+  right: 2%
+  top: 50%
+  transform: translateY(-50%)
+  opacity: 0
+
+
+.contact__input_box:valid + label [name = 'checkmark-done-outline']
+  opacity: 1
