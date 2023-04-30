@@ -1,10 +1,13 @@
 .header
   width: 100vw
-  height: 55vw
   background-blend-mode: hard-light
   background-image: linear-gradient(to right top, $color-primary-1 , $color-primary-4), url("../img/my_img2.jpg")
   background-size: cover
   background-position: right
+
+  @include response(1000)
+    height: 55vw
+
   // NAVIGATIONS---------
   &__nav
     display: flex
@@ -13,6 +16,7 @@
     padding: 1.5rem 1.5rem
     z-index: 9
 
+    
     &:hover .header__logo_box::before, &:hover .header__logo_box::after
       width: 100%
       height: 100%
@@ -32,11 +36,15 @@
 
   // LOGO BOX-----
   &__logo_box
-    height: 4vw
-    width: 4vw
+    height: 7rem
+    width: 7rem
     display: inline-block
     position: relative
     flex-shrink: 0
+
+    // @include response(1000)
+    //   height: 5rem
+    //   width: 5rem
 
     &::before,
     &::after
@@ -94,6 +102,10 @@
     display: flex
     align-items: center
     position: relative
+    @include response(1000)
+      align-items: flex-start
+      padding-top: 40%
+      transform: translateY(-50%)
 
   &__content
     text-transform: uppercase
@@ -101,7 +113,8 @@
     flex-direction: column
     padding-left: 20%
     font-weight: 900
-    // background-color: #333
+    @include response(1000)
+      padding-left: 10%
     
     h1
       font-size: 8rem

@@ -1,24 +1,36 @@
 .skills
-  padding: 10% 13%
   display: flex
   flex-direction: column
 
+  h2
+    margin-left: -5rem
+
   &__tech
-    display: flex
+    display: grid
+    gap: 3rem
+    grid-template-columns: repeat(auto-fit, minmax(35rem, max-content))
+    grid-auto-flow: row
     justify-content: space-between
+    min-width: 100%
 
     &_frontend, &_backend, &_database 
       position: relative
       background-image: linear-gradient(to bottom left, $color-primary-1, $color-primary-2)
       height: 50rem
-      width: 40rem
+      width: 100%
       display: flex
+      flex-grow: 1
       flex-direction: column
       overflow: hidden
+      filter: brightness(110%)
+
+      // @include response(1400)
+      //   max-width: 10rem
+      //   height: 40rem
 
 
     &_img
-      width: 40rem
+      width: 100%
       height: 40%
       clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%)
       background-blend-mode: color
@@ -26,11 +38,11 @@
       background-size: cover
 
       &--1
-        background-image: linear-gradient(to bottom left, $color-secondary-1, $color-secondary-2, $color-secondary-3, $color-secondary-4) ,url('../img/frontend.jpeg')
+        background-image: linear-gradient(to bottom left, $color-primary-3, $color-primary-4, $color-primary-5) ,url('../img/frontend.jpeg')
       &--2
-        background-image: linear-gradient(to bottom left, $color-secondary-1, $color-secondary-2, $color-secondary-3, $color-secondary-4) ,url('../img/backend.png')
+        background-image: linear-gradient(to bottom left, $color-primary-3, $color-primary-4, $color-primary-5) ,url('../img/backend.png')
       &--3
-        background-image: linear-gradient(to bottom left, $color-secondary-1, $color-secondary-2, $color-secondary-3, $color-secondary-4) ,url('../img/database.jpg')
+        background-image: linear-gradient(to bottom left, $color-primary-3, $color-primary-4, $color-primary-5) ,url('../img/database.jpg')
 
     &_heading
       font-size: 3rem
@@ -38,7 +50,7 @@
       text-transform: uppercase
       display: inline-block
       padding: .5rem 2rem
-      background-image: linear-gradient(to right bottom,$color-secondary-3, $color-secondary-4)
+      background-image: linear-gradient(to right bottom,$color-primary-3, $color-primary-4)
       transform: skew(-15deg)
       position: absolute
       top: 25%
@@ -46,24 +58,16 @@
     
     &_list
       list-style: none
-      font-size: 4rem
+      font-size: 3.5rem
       font-weight: 900
       letter-spacing: 2px
       text-align: center
-      color: $color-secondary-3
+      color: $color-primary-5
       font-family: $font-tertiary
+
+      @include response(1400)
+        font-size: 2.5rem
 
       li:not(:last-child)
         border-bottom: 2px solid $color-grey-dark-2
 
-#section__skill
-  padding: 0
-  position: relative
-  overflow: hidden
-
-.bg-video__content
-  background-size: cover
-  background-position: center
-  position: absolute
-  z-index: -1
-  opacity: 40%

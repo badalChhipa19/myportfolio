@@ -3,6 +3,15 @@ html
   box-sizing: border-box
   scroll-behavior: smooth
 
+  @include response(1400)
+    font-size: 56.25%
+  @include response(1000)
+    font-size: 50%
+  @include response(600)
+    font-size: 43.25%
+  @include response(400)
+    font-size: 37.5%
+
 *,
 *::after,
 *::before
@@ -27,5 +36,8 @@ body
   padding: 10% 13%
   border-top: 1px solid $color-primary-2
 
+  div
+    max-width: 150rem
+    margin: 0 auto
 body::-webkit-scrollbar
   display: none
